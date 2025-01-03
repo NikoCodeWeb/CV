@@ -1,9 +1,10 @@
 :root {
+    --rg-me:#e23b41;
     --rgbbody: rgb(236, 236, 236);
     --rgb: rgb(240, 90, 4);
     --shadow: inset 3px 3px 3px #cdcdcd, inset -3px -3px 3px #fafafa;
     --pointer: pointer;
-
+    --color-gray: #585858;
 }
 
 a {
@@ -28,6 +29,7 @@ form {
     display: flex;
     flex-direction: column;
 }
+
 .bg {
     background-color: var(--rgbbody);
 }
@@ -40,8 +42,16 @@ form {
     display: inline-block;
 }
 
-.border {
+.border-1 {
     border-radius: 1rem;
+}
+
+.border-2 {
+    border-radius: 2rem;
+}
+
+.border-50 {
+    border-radius: 50%;
 }
 
 .position-r {
@@ -52,9 +62,8 @@ form {
     position: absolute;
 }
 
-.auter {
+.auter-shadow {
     box-shadow: 3px 3px 3px #cdcdcd, -3px -3px 3px #fafafa;
-    transition: box-shadow 0.3s ease-in-out;
 }
 
 /*hedaer*/
@@ -72,10 +81,11 @@ header a {
     margin: 50px 35px;
     width: 45px;
     height: 45px;
-    /* transition: box-shadow 0.5s ease; */
+    transition: box-shadow 0.5s ease-in-out;
 }
 
 header a:hover {
+    transition: box-shadow 0.5s ease-in-out;
     box-shadow: var(--shadow);
     cursor: var(--pointer);
 }
@@ -84,11 +94,12 @@ header span {
     margin: 50px 100px;
     width: 45px;
     height: 45px;
-    /* transition: box-shadow 0.5s ease; */
+    /* transition: box-shadow 0.5s ease-in-out; */
 }
 
 header span:hover {
-    box-shadow: inset 3px 3px 3px #cdcdcd, inset -3px -3px 3px #fafafa;
+    /* transition: box-shadow 0.5s ease-in-out; */
+    box-shadow: var(--shadow);
     cursor: var(--pointer);
 }
 
@@ -108,29 +119,104 @@ header span:hover {
 
 @media (max-width:600px) {
     .container-a {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
+
     .box1 {
-        order: 2;
+        order: 1;
         flex-basis: 100%;
     }
 
     .box2 {
-        order: 1;
+        order: 2;
         flex-basis: 100%;
     }
+    .div2-btn{
+        width: 80%;
+    }
 }
+
 .box1 {
     margin: 20px 20px;
-    flex: 2;
+    flex: 3;
     text-align: center;
     box-sizing: border-box;
-    background-color: rgb(226, 117, 16);
+    background-color: var(--rg-me);
 }
-h1{
-    font-family: 'Lateef',sans-serif;
+
+h1 {
+    font-family: 'Lateef', sans-serif;
 }
+
 .box2 {
+    height: 40rem;
+    padding: 50px 20px;
+    display: grid;
+    place-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
     margin: 20px 20px;
     flex: 1;
+}
+
+.box2 img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.box2 .div1 {
+    order: 1;
+    box-shadow: var(--shadow);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    width: 12rem;
+    height: 12rem;
+    background-color: var(--rgbbody);
+}
+
+.box2 .div1>div {
+    box-shadow: 3px 3px 3px #cdcdcd;
+    width: 10.5rem;
+    height: 10.5rem;
+    background-color: var(--rgbbody);
+}
+
+.box2 .p-name {
+    margin-bottom: 0;
+    margin-top:0;
+    font-size: 2.5rem;
+    font-family: 'Lateef', sans-serif;
+    display: inline-block;
+    order: 2;
+}
+
+.box2 .p-name span {
+    color: var(--color-gray);
+    font-size: 1.5rem;
+}
+
+.box2 .div2 {
+    margin-top: 0;
+    text-align: center;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    order: 3;
+    width: 100%;
+    height: 20rem;
+}
+.div2-btn {
+    background-color: var(--rgbbody);
+    height: 2.5rem;
+}
+.div2-btn:hover{
+    box-shadow: var(--shadow);
+}
+@media (min-width:600px){
+    .div2-btn{
+        width: 70%;
+    }
 }
