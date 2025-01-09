@@ -1,30 +1,32 @@
 :root {
-    --rg-me:#e23b41;
+    --rg-me: #e23b41;
     --rgbbody: rgb(236, 236, 236);
     --rgb: rgb(240, 90, 4);
     --shadow: inset 3px 3px 3px #cdcdcd, inset -3px -3px 3px #fafafa;
     --pointer: pointer;
     --color-gray: #585858;
 }
-
-a {
-    text-decoration: none;
+                                                                                     /* Icons */
+.rotate{
+    animation: spin 3s linear infinite;
 }
-
+@keyframes spin {
+    from{transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+                                                                                  /*----------*/
 body {
     background-color: var(--rgbbody);
     direction: rtl;
 }
-
 html,
 body,
 form {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    /* font-family:Arial, Helvetica, sans-serif; */
+    font-family: 'Lateef', sans-serif;
 }
-
 .column {
     display: flex;
     flex-direction: column;
@@ -62,52 +64,67 @@ form {
     position: absolute;
 }
 
+                                                                                        /*hedaer*/
+.div-h {
+    width: 10rem;
+    height: 5rem;
+    margin-top: 3rem;
+    margin-right: 1.5rem;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.tran-btn{
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: box-shadow 0.3s ease-in-out;
+    -moz-transition: box-shadow 0.3s ease-in-out;
+    -o-transition: box-shadow 0.3s ease-in-out;
+    -ms-transition: box-shadow 0.3s ease-in-out;
+}
 .auter-shadow {
     box-shadow: 3px 3px 3px #cdcdcd, -3px -3px 3px #fafafa;
 }
-
-/*hedaer*/
-
-
-header {
-    position: relative;
+.w-h-50{
+    width: 50px;
+    height: 50px;
 }
-
-header div {
-    margin-bottom: 110px;
+.cls-a1 {
+    margin-right: 65px;
 }
-
-header a {
-    margin: 50px 35px;
-    width: 45px;
-    height: 45px;
-    transition: box-shadow 0.5s ease-in-out;
+header .cls-a2 {
+    font-size: 30px;
+    display: grid;
+    place-items: center;
 }
-
-header a:hover {
-    transition: box-shadow 0.5s ease-in-out;
+header .cls-a1:hover{
+    box-shadow: 0 0 0 rgb(0,0,0,0);
+}
+header .cls-a2:hover {
     box-shadow: var(--shadow);
     cursor: var(--pointer);
 }
 
-header span {
-    margin: 50px 100px;
-    width: 45px;
-    height: 45px;
-    /* transition: box-shadow 0.5s ease-in-out; */
+.cls-b1 {
+    margin: 0;
+}
+header .cls-b1:hover{
+    box-shadow: 0 0 0 rgb(0,0,0,0);
+}
+header .cls-b2 {
+    font-size: 25px;
+    display: grid;
+    place-items: center;
+
 }
 
-header span:hover {
-    /* transition: box-shadow 0.5s ease-in-out; */
+header .cls-b2:hover {
     box-shadow: var(--shadow);
     cursor: var(--pointer);
+
 }
 
-/* transition
-اعمال نشد showdo روی*/
-
-
-/* section */
+                                                                                    /* section */
 
 .container-a {
     box-sizing: border-box;
@@ -131,21 +148,21 @@ header span:hover {
         order: 2;
         flex-basis: 100%;
     }
-    .div2-btn{
-        width: 80%;
+
+    .div2-btn, .div2-div {
+        width: 25rem;
     }
 }
 
 .box1 {
+    box-sizing: border-box;
+    padding: 10px 10px;
     margin: 20px 20px;
     flex: 3;
     text-align: center;
     box-sizing: border-box;
     background-color: var(--rg-me);
-}
-
-h1 {
-    font-family: 'Lateef', sans-serif;
+    height: 30rem;
 }
 
 .box2 {
@@ -185,9 +202,8 @@ h1 {
 
 .box2 .p-name {
     margin-bottom: 0;
-    margin-top:0;
+    margin-top: 0;
     font-size: 2.5rem;
-    font-family: 'Lateef', sans-serif;
     display: inline-block;
     order: 2;
 }
@@ -196,7 +212,6 @@ h1 {
     color: var(--color-gray);
     font-size: 1.5rem;
 }
-
 .box2 .div2 {
     margin-top: 0;
     text-align: center;
@@ -206,17 +221,36 @@ h1 {
     gap: 1.5rem;
     order: 3;
     width: 100%;
-    height: 20rem;
+    height: 30rem;
+    margin-bottom: 3rem;
 }
-.div2-btn {
-    background-color: var(--rgbbody);
+.div2-div{
     height: 2.5rem;
 }
-.div2-btn:hover{
-    box-shadow: var(--shadow);
+.div2-btn {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    place-items: center;
+    margin:auto auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 10px 25px;
 }
-@media (min-width:600px){
-    .div2-btn{
-        width: 70%;
+.div2-btn i,p{
+    font-size: 1.5rem; 
+    --fa-primary-color:var(--rg-me);
+    --fa-secondary-color:#000000;
+}
+.div2-div:hover{
+    box-shadow: 0 0 0 rgb(0,0,0,0);
+}
+.div2-btn:hover {
+    box-shadow: var(--shadow);
+    cursor: var(--pointer);
+}
+@media (min-width:600px) {
+    .div2-btn, .div2-div {
+        width: 10rem;
     }
 }
